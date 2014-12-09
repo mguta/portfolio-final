@@ -1,0 +1,30 @@
+
+     <article>
+        <div class="container">
+            <div class="row">
+                <div>
+               <center><table width="100%">
+                    <tr><th><h2>The Cluster Twitter Feed</h2> Powered by Ruby</th>
+                        <th><h2>The Cluster Instagram Feed</h2> Powered by Ruby</th></tr>
+                   <tr>
+                        <td width= "500px">
+                    <% @search_results.each do |tweet| %>
+                <p><strong> <a href="https://twitter.com/MercerCluster"><%= tweet.user.screen_name %></a></strong>: <%= tweet.text %></p> 
+                <% end %>
+                    </td>
+                        
+                    <td width= "50%">
+					<p>These are the images that I've gathered from Instagram using Ruby.</p>
+                    <% @ig_results.each do|media_item| %>
+                    <img src="<%= media_item.images.thumbnail.url %>" alt="" >
+                    
+                    <% end %>
+                    </td>
+                    
+                    </tr></table></center>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
